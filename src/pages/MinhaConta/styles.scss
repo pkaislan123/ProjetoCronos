@@ -1,0 +1,49 @@
+
+@font-face {
+  font-family: 'A4 SPEED FONT';
+  src: url('../../fonts/A4SPEED-Bold.ttf') format('truetype');
+}
+
+
+.alogo {
+  color: #1abc9c;
+  margin-left: 50px;
+  text-decoration: none;
+  background-color: none;
+}
+
+#MuiPaper-root {
+  transition: none !important;
+}
+
+.example {
+  background: LimeGreen;
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  color: 'white';
+}
+
+
+.example:hover {
+  box-shadow: 10px 5px 5px ForestGreen;
+
+  
+}
+
+
+.example2 {
+  background: Black;
+  width: 100px;
+  height: 200px;
+  border-radius: 5px;
+  color: white;
+}
+
+
+.example2:hover {
+  box-shadow: 10px 5px 5px #363636;
+
+
+}
+

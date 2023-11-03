@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'A4 SPEED FONT';
+  src: url('/src/fonts/A4SPEED-Bold.ttf') format('truetype');
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'A4 SPEED FONT','Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: black;
+
+}
+
+#root {
+  background-color: black; /* Substitua isso pelo código de cor desejado */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
