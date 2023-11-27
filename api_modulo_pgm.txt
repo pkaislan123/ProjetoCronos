@@ -1,0 +1,22 @@
+
+https://gruporosinetos.com/api/v1/protected/modulopgm/tarefas/criar//
+
+
+0 liga os dois reeles
+1 ligar rele 1
+2 ligar rele 2
+3 desliga os reles
+4 desligar o rele 1
+5 desligar o rele 2
+6 a 10 audios cornetas
+
+6 - avulso 1    
+7 - avulso 2
+8 - avulso 3
+9 - avulso 4
+10 - avulso 5
+
+http://162.240.226.254:10050/v1/protected/modulopgm/tarefas/criar/2023-10-7/1234/6
+
+
+http://162.240.226.254:10050/v1/protected/modulopgm/tarefas/listar/2023-10-7/1234
