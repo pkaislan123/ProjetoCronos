@@ -653,6 +653,7 @@ const excluirCronometro = async (idCronometro) => {
                                                                 Toolbar: CustomToolbar,
                                                              }}
  autoHeight
+columnBuffer={2} 
                                                             pagination
                                                             page={0}
                                                             pageSize={25}
