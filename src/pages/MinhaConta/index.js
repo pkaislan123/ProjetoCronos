@@ -2,8 +2,6 @@ import { Grid, Typography, Switch } from '@material-ui/core';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import SwipeableViews from 'react-swipeable-views';
-import AppBar from '@mui/material/AppBar';
-import Box from '@material-ui/core/Box';
 import React, { useState, useEffect } from 'react';
 import Skeleton from '@material-ui/lab/Skeleton';
 import Button from '@material-ui/core/Button';
@@ -295,12 +293,12 @@ const excluirCronometro = async (idCronometro) => {
             field: 'id_cronometro',
             id: 1,
             headerClassName: 'cabecalho_amarelo',
-            hide: 'sm'
+           
         },
         {
             headerName: 'Modo',
             field: 'tipo_cronometro',
-            minWidth: 300,
+           
             id: 2,
             headerClassName: 'cabecalho_amarelo',
             valueFormatter: (params) => {
@@ -312,9 +310,9 @@ const excluirCronometro = async (idCronometro) => {
         {
             headerName: 'Data',
             field: 'data_hora_salvamento',
-            minWidth: 300,
+         
             id: 3,
- hide: 'sm',
+
             headerClassName: 'cabecalho_amarelo',
             valueFormatter: (params) => {
                 const valueFormatted = formatDataEHour(params.value);
@@ -339,7 +337,7 @@ const excluirCronometro = async (idCronometro) => {
         {
             field: 'millissegundos',
             headerName: 'Tempo',
-            minWidth: 100,
+        
             headerClassName: 'cabecalho_amarelo',
             id: 4,
             valueFormatter: (params) => {
@@ -587,12 +585,14 @@ const excluirCronometro = async (idCronometro) => {
                 alignItems="center"
                 justifyContent={"center"}
             >
-
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: 30 }}>
-
-                    <Box style={{ backgroundColor: 'white', width: '100%', alignItems: 'center', }}>
-                        <AppBar position="static" >
-
+                         <Grid
+                         item xs={12}
+                container
+                direction="column"
+                alignItems="center"
+                justifyContent={"center"}
+                        >
+          
                             <Tabs
                                 value={value}
                                 onChange={handleChange}
@@ -601,18 +601,11 @@ const excluirCronometro = async (idCronometro) => {
                                 variant="scrollable"
                                 scrollButtons="auto"
                                 aria-label="scrollable auto tabs example"
-
-
                             >
-
                                 <Tab label="Cronometros" style={{ fontSize: 22, fontFamily: 'A4 SPEED FONT', color: 'black', backgroundColor: 'yellow' }} />
-
                             </Tabs>
-                        </AppBar>
-
-                    </Box>
-                </div>
-
+                     
+  </Grid>
 
                 <SwipeableViews
                     index={value}
@@ -638,7 +631,7 @@ const excluirCronometro = async (idCronometro) => {
                                 item xs={12}
                                 alignItems={"center"}
                                 justifyContent={"center"}
-                                style={{ backgroundColor: 'red', marginLeft: 40, marginRight: 40 }}
+                                style={{ backgroundColor: 'yellow', marginLeft: 40, marginRight: 40 }}
                             >
 
                                 {
@@ -647,24 +640,9 @@ const excluirCronometro = async (idCronometro) => {
                                         } >
                                         </Skeleton>
                                         :
-                                        <Grid
-                                            item xs={12} sm={12} md={12} lg={12} xl={12}
-                                            container
-                                            direction="row"
-                                            alignItems="center"
-                                            justifyContent={"center"}
+                               
 
-                                        >
-
-                                            <Grid item xs={12}
-                                                container
-                                                direction="row"
-                                                alignItems="center"
-                                                style={{ backgroundColor: 'yellow', color:'black' }}
-                                            >
-
-                                                <div style={{ height: '80%' }}>
-                                                    <div style={{ width: '100%', height: '100%' }} >
+                                             
                                                     <DataGridPro localeText={ptBR.props.MuiDataGrid.localeText}
                                                        
                                                             getRowId={getRowId}
@@ -674,7 +652,7 @@ const excluirCronometro = async (idCronometro) => {
                                                             components={{
                                                                 Toolbar: CustomToolbar,
                                                              }}
-
+ autoHeight
                                                             pagination
                                                             page={0}
                                                             pageSize={25}
@@ -691,20 +669,12 @@ sx={{
     backgroundColor: "yellow",
     color: "black"
   },
-
-  "& .MuiDataGrid-row:isSelected": {
-    backgroundColor: "green",
-    // color: "red"
-  },
 }}
                                                            
                                                         />
                                                      
-                                                    </div>
-                                                </div>
+                                               
 
-                                            </Grid>
-                                        </Grid>
                                 }
                             </Grid>
                         </Grid>
