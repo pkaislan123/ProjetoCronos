@@ -13,7 +13,7 @@ import Paper from '@material-ui/core/Paper';
 
 import './styles.scss';
 import Cookies from 'js-cookie';
-import { makeStyles } from '@material-ui/core/styles';
+
 import api from '../../services/api';
 import moment from 'moment';
 
