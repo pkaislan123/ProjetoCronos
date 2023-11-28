@@ -363,8 +363,8 @@ const excluirCronometro = async (idCronometro) => {
         {
             field: 'millissegundos',
             headerName: 'Tempo',
-        minWidth: largura < 600 ? 130 : 200,
-            maxWidth: largura < 600 ? 150 : 200,
+        minWidth: largura < 600 ? 80 : 200,
+            maxWidth: largura < 600 ? 110 : 200,
             headerClassName: 'cabecalho_amarelo',
             id: 4,
             valueFormatter: (params) => {
@@ -658,7 +658,7 @@ const excluirCronometro = async (idCronometro) => {
                                 item xs={12}
                                 alignItems={"center"}
                                 justifyContent={"center"}
-                                style={{ backgroundColor: 'yellow', marginLeft: 10, marginRight: 10 }}
+                                style={{ backgroundColor: 'yellow', marginLeft: 5, marginRight: 5 }}
                             >
 
                                 {
