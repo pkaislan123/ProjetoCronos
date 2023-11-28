@@ -335,8 +335,8 @@ const excluirCronometro = async (idCronometro) => {
         {
             headerName: 'Data',
             field: 'data_hora_salvamento',
-           minWidth: largura < 600 ? 130 : 200,
-            maxWidth: largura < 600 ? 150 : 200,
+    minWidth: largura < 600 ? 80 : 200,
+            maxWidth: largura < 600 ? 100 : 200,
             id: 3,
 
             headerClassName: 'cabecalho_amarelo',
@@ -364,7 +364,7 @@ const excluirCronometro = async (idCronometro) => {
             field: 'millissegundos',
             headerName: 'Tempo',
         minWidth: largura < 600 ? 80 : 200,
-            maxWidth: largura < 600 ? 110 : 200,
+            maxWidth: largura < 600 ? 100 : 200,
             headerClassName: 'cabecalho_amarelo',
             id: 4,
             valueFormatter: (params) => {
