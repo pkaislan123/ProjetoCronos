@@ -469,7 +469,7 @@ const excluirCronometro = async (idCronometro) => {
                                         <Grid xs={8}
                                             style={{ paddingLeft: 10 }}
                                         >
-                                            <Typography style={{ fontFamily: 'A4 SPEED FONT', marginTop: '0' }} variant="h2">{MilissegundosParaTempo(melhorTempoArrancada)}</Typography>
+                                            <Typography style={{ fontFamily: 'A4 SPEED FONT', marginTop: '0' }} variant={largura < 600 ? "h3" : "h2"} >{MilissegundosParaTempo(melhorTempoArrancada)}</Typography>
                                         </Grid>
 
                                         <Grid xs={2}
@@ -521,7 +521,7 @@ const excluirCronometro = async (idCronometro) => {
 
                                             style={{ paddingLeft: 10 }}
                                         >
-                                            <Typography style={{ fontFamily: 'A4 SPEED FONT', marginTop: '0' }} variant="h2">{MilissegundosParaTempo(melhorTempoPassagem)}</Typography>
+                                            <Typography style={{ fontFamily: 'A4 SPEED FONT', marginTop: '0' }}variant={largura < 600 ? "h3" : "h2"}>{MilissegundosParaTempo(melhorTempoPassagem)}</Typography>
                                         </Grid>
 
                                         <Grid xs={2}
@@ -572,7 +572,7 @@ const excluirCronometro = async (idCronometro) => {
                                         <Grid xs={8}
                                             style={{ paddingLeft: 10 }}
                                         >
-                                            <Typography style={{ fontFamily: 'A4 SPEED FONT', marginTop: '0' }} variant="h2">{MilissegundosParaTempo(melhorTempoArrancadaBot)}</Typography>
+                                            <Typography style={{ fontFamily: 'A4 SPEED FONT', marginTop: '0' }} variant={largura < 600 ? "h3" : "h2"}>{MilissegundosParaTempo(melhorTempoArrancadaBot)}</Typography>
                                         </Grid>
 
                                         <Grid xs={2}
