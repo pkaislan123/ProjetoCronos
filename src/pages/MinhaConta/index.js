@@ -74,6 +74,25 @@ export const MuiSwitchLarge = styled(Switch)(({ theme }) => ({
 export default function MinhaConta() {
 
 
+  const [largura, setLargura] = useState(0);
+   
+
+    function checkDimenssoes() {
+        var largura = window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientWidth;
+     
+        // console.log("altura: " + altura);
+      
+
+        setLargura(largura);
+        
+
+    }
+
+    window.addEventListener('resize', function (event) {
+        checkDimenssoes();
+    });
 
 
 
@@ -121,7 +140,7 @@ export default function MinhaConta() {
 
         listarCronometros();
 
-
+  checkDimenssoes();
 
 
     }, []);
@@ -295,13 +314,16 @@ const excluirCronometro = async (idCronometro) => {
             headerName: 'ID',
             field: 'id_cronometro',
             id: 1,
+            minWidth: largura < 600 ? 1 : 200,
+            maxWidth: largura < 600 ? 1 : 200,
             headerClassName: 'cabecalho_amarelo',
-           
+            hide: largura < 600 ? true : false
         },
         {
             headerName: 'Modo',
             field: 'tipo_cronometro',
-           
+            minWidth: largura < 600 ? 130 : 200,
+            maxWidth: largura < 600 ? 150 : 200,
             id: 2,
             headerClassName: 'cabecalho_amarelo',
             valueFormatter: (params) => {
@@ -313,7 +335,8 @@ const excluirCronometro = async (idCronometro) => {
         {
             headerName: 'Data',
             field: 'data_hora_salvamento',
-         
+           minWidth: largura < 600 ? 130 : 200,
+            maxWidth: largura < 600 ? 150 : 200,
             id: 3,
 
             headerClassName: 'cabecalho_amarelo',
@@ -340,7 +363,8 @@ const excluirCronometro = async (idCronometro) => {
         {
             field: 'millissegundos',
             headerName: 'Tempo',
-        
+        minWidth: largura < 600 ? 130 : 200,
+            maxWidth: largura < 600 ? 150 : 200,
             headerClassName: 'cabecalho_amarelo',
             id: 4,
             valueFormatter: (params) => {
@@ -426,7 +450,7 @@ const excluirCronometro = async (idCronometro) => {
                                         alignItems={"center"}
                                         justifyContent={"center"}
                                         component={Paper} elevation={6} className={"Paper"}
-                                        style={{ backgroundColor: 'blue', color: 'white', margin: 5, padding: 50, marginTop: 20, paddingBottom: 20, borderRadius: '10px' }}
+                                        style={{ backgroundColor: 'blue', color: 'white', padding: largura < 600 ? 15 : 50, marginTop: 20, paddingBottom: 20, borderRadius: '10px', margin:  largura < 600 ? 20 : 20}}
 
                                     >
 
@@ -475,7 +499,7 @@ const excluirCronometro = async (idCronometro) => {
                                         alignItems={"center"}
                                         justifyContent={"center"}
                                         component={Paper} elevation={6} className={"Paper"}
-                                        style={{ backgroundColor: 'green', color: 'white', margin: 5, padding: 50, marginTop: 20, paddingBottom: 20, borderRadius: '10px' }}
+                                        style={{ backgroundColor: 'green', color: 'white', padding: largura < 600 ? 15 : 50, marginTop: 20, paddingBottom: 20, borderRadius: '10px', margin:  largura < 600 ? 20 : 20 }}
 
                                     >
 
@@ -529,7 +553,7 @@ const excluirCronometro = async (idCronometro) => {
                                         alignItems={"center"}
                                         justifyContent={"center"}
                                         component={Paper} elevation={6} className={"Paper"}
-                                        style={{ backgroundColor: 'purple', color: 'white', margin: 5, padding: 50, marginTop: 20, paddingBottom: 20, borderRadius: '10px' }}
+                                        style={{ backgroundColor: 'purple', color: 'white', padding: largura < 600 ? 15 : 50, marginTop: 20, paddingBottom: 20, borderRadius: '10px', margin:  largura < 600 ? 20 : 20}}
 
                                     >
 
@@ -634,7 +658,7 @@ const excluirCronometro = async (idCronometro) => {
                                 item xs={12}
                                 alignItems={"center"}
                                 justifyContent={"center"}
-                                style={{ backgroundColor: 'yellow', marginLeft: 40, marginRight: 40 }}
+                                style={{ backgroundColor: 'yellow', marginLeft: 10, marginRight: 10 }}
                             >
 
                                 {
@@ -644,10 +668,10 @@ const excluirCronometro = async (idCronometro) => {
                                         </Skeleton>
                                         :
                                
-
+ <div style={{  width: "100%" }}>
                                              
                                                     <DataGridPro localeText={ptBR.props.MuiDataGrid.localeText}
-                                                       
+                                                            style={{fontSize: 18}}
                                                             getRowId={getRowId}
                                                             rows={cronometros} columns={columnsDataGrid} disableColumnResize={false}
                                                             onCellClick={handleCellClick}
@@ -671,12 +695,17 @@ columnBuffer={2}
 sx={{
   "& .MuiDataGrid-row:hover": {
     backgroundColor: "yellow",
-    color: "black"
+    color: "black",
+     fontSize: largura < 600 ? 16 : 22
+  },
+"& .MuiDataGrid-row": {
+  
+    fontSize: largura < 600 ? 12 : 18
   },
 }}
                                                            
                                                         />
-                                                     
+                                                     </div>
                                                
 
                                 }
